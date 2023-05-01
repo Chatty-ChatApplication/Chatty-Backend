@@ -6,12 +6,17 @@ namespace Domain.ValueObjects.Commons;
 public readonly partial struct EmailAddress
 {
    private static readonly Regex EmailRegex = new Regex(@"^([\w\.\-]+)@([\w\-]+)((\.(\w){2,3}){1,})$");
+
+   public static bool IsValid(string value)
+   {
+      return EmailRegex.IsMatch(value);
+   }
    
-   private readonly string Value { get; init; }
+   private string Value { get; init; }
 
    public EmailAddress(string value)
    {
-      if (!EmailRegex.IsMatch(value))
+      if (!IsValid(value))
       {
          throw new InvalidEmailAddressException("invalid email address");
       }
