@@ -22,4 +22,9 @@ public readonly partial struct EmailAddress
    {
       return email.Value;
    }
+   
+   public static explicit operator EmailAddress(string emailString)
+   {
+      return new EmailAddress(emailString);
+   }
 }
