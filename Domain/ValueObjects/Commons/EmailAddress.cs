@@ -13,7 +13,7 @@ public readonly partial struct EmailAddress
    {
       if (!EmailRegex.IsMatch(value))
       {
-         throw new InvalidEmailAddressException();
+         throw new InvalidEmailAddressException("invalid email address");
       }
       Value = value;
    }
