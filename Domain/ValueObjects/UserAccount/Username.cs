@@ -19,4 +19,14 @@ public readonly struct Username
       }
       Value = value;
    }
+
+   public static explicit operator string(Username username)
+   {
+      return username.Value;
+   }
+
+   public static explicit operator Username(string usernameString)
+   {
+      return new Username(usernameString);
+   }
 }
