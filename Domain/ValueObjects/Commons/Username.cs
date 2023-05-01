@@ -1,6 +1,6 @@
 ﻿using Domain.Exceptions;
 
-namespace Domain.ValueObjects.UserAccount;
+namespace Domain.ValueObjects.Commons;
 
 public readonly struct Username
 {
