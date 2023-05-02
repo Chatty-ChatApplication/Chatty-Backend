@@ -6,7 +6,7 @@ public class UserAccount : EntityBase
 {
    public AuthProviderId AuthProviderId { get; set; }
 
-   public UserAccount(Guid id, AuthProviderId authProviderId) : base(id)
+   internal UserAccount(Guid id, AuthProviderId authProviderId) : base(id)
    {
       AuthProviderId = authProviderId;
    }
